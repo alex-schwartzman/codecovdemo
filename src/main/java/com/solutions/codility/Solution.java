@@ -8,7 +8,6 @@ public class Solution {
 
     //naiive solution, to double-check the tests
     public int solution1(int x0, int y0, int x1, int y1) {
-	System.out.println("Hello codecov");
         int deltaX = Math.abs(x1 - x0);
         int deltaY = Math.abs(y1 - y0);
         if (deltaY > deltaX) {
