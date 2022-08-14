@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+
+group 'com.solutions.codility'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+application {
+    mainClassName = 'com.solutions.codility.Main'
+}
