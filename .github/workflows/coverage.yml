@@ -1,0 +1,32 @@
+name: codecovdemo
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: run coverage check 
+
+    steps:
+
+    - uses: actions/checkout@v1
+    - name: Set up JDK 11
+      uses: actions/setup-java@v3.3.0
+      with:
+        distribution: 'corretto'
+        java-version: '11'
+        cache: "gradle"      
+
+    - name: Run tests and collect coverage
+      run: ./gradlew check
+
+    - name: Upload coverage reports to Codecov with GitHub Action
+      uses: codecov/codecov-action@v3
+      with:
+        flags: backend
+
+
